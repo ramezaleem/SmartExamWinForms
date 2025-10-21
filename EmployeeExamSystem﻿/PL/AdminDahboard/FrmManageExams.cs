@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,11 +24,25 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             InitializeComponent();
         }
 
-
         private void FrmManageExams_Load(object sender, EventArgs e)
         {
-            RefreshExamGrid();
-            SetInitialState();
+            try
+            {
+                dgvExams.AutoGenerateColumns = true;
+                dgvExams.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvExams.MultiSelect = false;
+                dgvExams.ReadOnly = true;
+                dgvExams.AllowUserToAddRows = false;
+                dgvExams.AllowUserToDeleteRows = false;
+
+                RefreshExamGrid();
+
+                SetInitialState();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء تحميل الصفحة:\n" + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SetInitialState()
@@ -37,11 +52,12 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             btnDeleteExam.Enabled = false;
             btnSaveEdit.Enabled = false;
             btnManageQuestions.Enabled = false;
+            btnInsertExam.Enabled = false;
 
             txtExamName.ReadOnly = true;
             nudPeriodTime.Enabled = false;
             dtpEndDate.Enabled = false;
-            dtpStartDate.Enabled = false; 
+            dtpStartDate.Enabled = false;
             rdBtnActive.Enabled = false;
             rdBtnNotActive.Enabled = false;
 
@@ -51,21 +67,54 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
         private void RefreshExamGrid()
         {
             dgvExams.DataSource = examsManager.GetAllExams();
-            dgvExams.Columns["ExamID"].HeaderText = "رقم الامتحان";
-            dgvExams.Columns["ExamName"].HeaderText = "اسم الامتحان";
-            dgvExams.Columns["PeriodTimeInMinutes"].HeaderText = "المدة بالدقائق";
-            dgvExams.Columns["EndDate"].HeaderText = "تاريخ النهاية";
-            dgvExams.Columns["CreatedAt"].HeaderText = "تاريخ الإنشاء";
-            dgvExams.Columns["LastModifiedDate"].HeaderText = "آخر تعديل";
-            dgvExams.Columns["IsActive"].HeaderText = "فعال";
 
-            dgvExams.Columns["ExamID"].Width = 70;
-            dgvExams.Columns["ExamName"].Width = 250;
-            dgvExams.Columns["PeriodTimeInMinutes"].Width = 100;
-            dgvExams.Columns["EndDate"].Width = 220;
-            dgvExams.Columns["CreatedAt"].Width = 220;
-            dgvExams.Columns["LastModifiedDate"].Width = 220;
-            dgvExams.Columns["IsActive"].Width = 75;
+            if (dgvExams.Columns.Contains("ExamID"))
+            {
+                dgvExams.Columns["ExamID"].HeaderText = "رقم الامتحان";
+                dgvExams.Columns["ExamID"].Width = 70;
+            }
+
+            if (dgvExams.Columns.Contains("ExamName"))
+            {
+                dgvExams.Columns["ExamName"].HeaderText = "اسم الامتحان";
+                dgvExams.Columns["ExamName"].Width = 230;
+            }
+
+            if (dgvExams.Columns.Contains("PeriodTimeInMinutes"))
+            {
+                dgvExams.Columns["PeriodTimeInMinutes"].HeaderText = "المدة بالدقائق";
+                dgvExams.Columns["PeriodTimeInMinutes"].Width = 100;
+            }
+
+            if (dgvExams.Columns.Contains("StartDate"))
+            {
+                dgvExams.Columns["StartDate"].HeaderText = "تاريخ البداية";
+                dgvExams.Columns["StartDate"].Width = 215;
+            }
+
+            if (dgvExams.Columns.Contains("EndDate"))
+            {
+                dgvExams.Columns["EndDate"].HeaderText = "تاريخ النهاية";
+                dgvExams.Columns["EndDate"].Width = 215;
+            }
+
+            if (dgvExams.Columns.Contains("CreatedAt"))
+            {
+                dgvExams.Columns["CreatedAt"].HeaderText = "تاريخ الإنشاء";
+                dgvExams.Columns["CreatedAt"].Width = 215;
+            }
+
+            if (dgvExams.Columns.Contains("LastModifiedDate"))
+            {
+                dgvExams.Columns["LastModifiedDate"].HeaderText = "آخر تعديل";
+                dgvExams.Columns["LastModifiedDate"].Width = 222;
+            }
+
+            if (dgvExams.Columns.Contains("IsActive"))
+            {
+                dgvExams.Columns["IsActive"].HeaderText = "فعال";
+                dgvExams.Columns["IsActive"].Width = 75;
+            }
 
             ClearForm();
         }
@@ -85,14 +134,15 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             txtExamName.ReadOnly = false;
             nudPeriodTime.Enabled = true;
             dtpEndDate.Enabled = true;
+            dtpStartDate.Enabled = true;
             rdBtnActive.Enabled = true;
             rdBtnNotActive.Enabled = true;
 
-            dtpStartDate.Enabled = true;
-            btnInsertExam.Enabled = true;  
+            btnInsertExam.Enabled = true;
             btnEditExam.Enabled = false;
             btnSaveEdit.Enabled = false;
             btnDeleteExam.Enabled = false;
+            btnAddNewExam.Enabled = false; 
 
             ClearForm();
         }
@@ -148,6 +198,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             }
 
             string examName = txtExamName.Text.Trim();
+            DateTime startDate = dtpStartDate.Value;
             int periodTime = (int)nudPeriodTime.Value;
             DateTime endDate = dtpEndDate.Value;
             bool isActive = rdBtnActive.Checked;
@@ -182,7 +233,8 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
             try
             {
-                bool updated = examsManager.UpdateExam(selectedExamId, examName, periodTime, endDate, isActive);
+                bool updated = examsManager.UpdateExam(selectedExamId, examName, periodTime, dtpStartDate.Value, dtpEndDate.Value, isActive);
+
                 if (updated)
                 {
                     MessageBox.Show("تم تعديل بيانات الامتحان بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -279,7 +331,8 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
             try
             {
-                bool added = examsManager.AddExam(examName, periodTime, endDate, isActive);
+                bool added = examsManager.AddExam(examName, periodTime, dtpStartDate.Value, dtpEndDate.Value, isActive);
+
                 if (added)
                 {
                     MessageBox.Show("تم إضافة الامتحان بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -296,6 +349,8 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
     }
 }
