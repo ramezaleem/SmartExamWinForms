@@ -349,8 +349,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
+      
     }
 }

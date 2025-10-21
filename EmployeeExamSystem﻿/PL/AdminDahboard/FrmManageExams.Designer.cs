@@ -72,15 +72,21 @@
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(459, 136);
+            this.dtpStartDate.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(457, 136);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(267, 27);
+            this.dtpStartDate.ShowUpDown = true;
+            this.dtpStartDate.Size = new System.Drawing.Size(269, 27);
             this.dtpStartDate.TabIndex = 9;
             // 
             // dtpEndDate
             // 
+            this.dtpEndDate.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEndDate.Location = new System.Drawing.Point(457, 169);
             this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.ShowUpDown = true;
             this.dtpEndDate.Size = new System.Drawing.Size(267, 27);
             this.dtpEndDate.TabIndex = 8;
             // 
