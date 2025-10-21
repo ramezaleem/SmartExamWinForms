@@ -17,13 +17,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             InitializeComponent();
         }
 
-        private void btnMnageExams_Click(object sender, EventArgs e)
-        {
-            FrmManageExams frm = new FrmManageExams();
-            frm.ShowDialog();  
-        }
-
-
         private void btnManageExams_Click(object sender, EventArgs e)
         {
             FrmManageExams frm = new FrmManageExams();
@@ -41,7 +34,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
         {
             this.Close();
         }
-
 
     }
 }

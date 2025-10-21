@@ -52,7 +52,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             btnDeleteExam.Enabled = false;
             btnSaveEdit.Enabled = false;
             btnManageQuestions.Enabled = false;
-            btnInsertExam.Enabled = false;
 
             txtExamName.ReadOnly = true;
             nudPeriodTime.Enabled = false;
@@ -281,18 +280,34 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             }
         }
 
+        private void dgvExams_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvExams == null || dgvExams.SelectedRows == null)
+                return;
+
+            bool hasSelection = dgvExams.SelectedRows.Count > 0;
+
+            btnEditExam.Enabled = hasSelection;
+            btnDeleteExam.Enabled = hasSelection;
+            btnManageQuestions.Enabled = hasSelection;
+
+            btnAddNewExam.Enabled = true;
+            btnInsertExam.Enabled = false;
+        }
+
         private void btnManageQuestions_Click(object sender, EventArgs e)
         {
-            if (selectedExamId <= 0)
+            if (dgvExams.SelectedRows.Count == 0)
             {
-                MessageBox.Show("يرجى اختيار امتحان أولاً لإدارة أسئلته", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("من فضلك اختر امتحان أولًا لإدارة أسئلته.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            FrmManageQuestions frmQuestions = new FrmManageQuestions(selectedExamId);
-            frmQuestions.ShowDialog();
+            int examId = Convert.ToInt32(dgvExams.SelectedRows[0].Cells["ExamID"].Value);
+            FrmManageQuestions frm = new FrmManageQuestions(examId);
+            frm.ShowDialog();
         }
-    
+
         private void btnInsertExam_Click(object sender, EventArgs e)
         {
             string examName = txtExamName.Text.Trim();
@@ -350,5 +365,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             }
         }
       
+
+
     }
 }

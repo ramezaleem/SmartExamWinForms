@@ -108,7 +108,6 @@
             this.btnMnageExams.TabIndex = 0;
             this.btnMnageExams.Text = "إدارة الامتحانات";
             this.btnMnageExams.UseVisualStyleBackColor = false;
-            this.btnMnageExams.Click += new System.EventHandler(this.btnMnageExams_Click);
             // 
             // FrmAdminDashboard
             // 
