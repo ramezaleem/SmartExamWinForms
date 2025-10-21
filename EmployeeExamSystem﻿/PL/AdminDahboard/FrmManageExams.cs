@@ -32,7 +32,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
         private void SetInitialState()
         {
-            btnAddExam.Enabled = true;
+            btnAddNewExam.Enabled = true;
             btnEditExam.Enabled = false;
             btnDeleteExam.Enabled = false;
             btnSaveEdit.Enabled = false;
@@ -41,9 +41,11 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             txtExamName.ReadOnly = true;
             nudPeriodTime.Enabled = false;
             dtpEndDate.Enabled = false;
-            dtpStartDate.Enabled = false;
+            dtpStartDate.Enabled = false; 
             rdBtnActive.Enabled = false;
             rdBtnNotActive.Enabled = false;
+
+            ClearForm();
         }
 
         private void RefreshExamGrid()
@@ -78,40 +80,45 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             selectedExamId = 0;
         }
 
-        private void btnAddExam_Click(object sender, EventArgs e)
+        private void btnAddNewExam_Click(object sender, EventArgs e)
         {
-            currentMode = FormMode.Add;
-
             txtExamName.ReadOnly = false;
-            nudPeriodTime.ReadOnly = false;
+            nudPeriodTime.Enabled = true;
             dtpEndDate.Enabled = true;
             rdBtnActive.Enabled = true;
             rdBtnNotActive.Enabled = true;
 
-            btnSaveEdit.Enabled = true;
-            btnAddExam.Enabled = false;
+            dtpStartDate.Enabled = true;
+            btnInsertExam.Enabled = true;  
             btnEditExam.Enabled = false;
+            btnSaveEdit.Enabled = false;
             btnDeleteExam.Enabled = false;
 
-            ClearForm(); 
+            ClearForm();
         }
 
         private void btnEditExam_Click(object sender, EventArgs e)
         {
-            if (selectedExamId <= 0) return;
-
-            currentMode = FormMode.Edit;
+            if (selectedExamId <= 0)
+            {
+                MessageBox.Show("يرجى اختيار امتحان للتعديل", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             txtExamName.ReadOnly = false;
-            nudPeriodTime.ReadOnly = false;
+            nudPeriodTime.Enabled = true;
             dtpEndDate.Enabled = true;
+            dtpStartDate.Enabled = true; 
             rdBtnActive.Enabled = true;
             rdBtnNotActive.Enabled = true;
 
-            btnSaveEdit.Enabled = true;
-            btnAddExam.Enabled = false;
+            btnAddNewExam.Enabled = false;
             btnEditExam.Enabled = false;
             btnDeleteExam.Enabled = false;
+            btnManageQuestions.Enabled = false;
+            btnInsertExam.Enabled = false;
+
+            btnSaveEdit.Enabled = true;
         }
 
         private void btnDeleteExam_Click(object sender, EventArgs e)
@@ -134,25 +141,63 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
+            if (selectedExamId <= 0)
+            {
+                MessageBox.Show("يرجى اختيار امتحان أولاً للتعديل", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string examName = txtExamName.Text.Trim();
+            int periodTime = (int)nudPeriodTime.Value;
+            DateTime endDate = dtpEndDate.Value;
             bool isActive = rdBtnActive.Checked;
 
-            if (currentMode == FormMode.Add)
+            if (string.IsNullOrWhiteSpace(examName))
             {
-                if (examsManager.AddExam(txtExamName.Text, (int)nudPeriodTime.Value, dtpEndDate.Value, isActive))
-                {
-                    MessageBox.Show("تم إضافة الامتحان بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshExamGrid();
-                    SetInitialState();
-                }
+                MessageBox.Show("اسم الامتحان مطلوب", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtExamName.Focus();
+                return;
             }
-            else if (currentMode == FormMode.Edit)
+
+            if (examName.Length < 3)
             {
-                if (examsManager.UpdateExam(selectedExamId, txtExamName.Text, (int)nudPeriodTime.Value, dtpEndDate.Value, isActive))
+                MessageBox.Show("اسم الامتحان قصير جدًا", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtExamName.Focus();
+                return;
+            }
+
+            if (periodTime <= 0)
+            {
+                MessageBox.Show("مدة الامتحان يجب أن تكون أكبر من صفر", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                nudPeriodTime.Focus();
+                return;
+            }
+
+            if (endDate <= DateTime.Now)
+            {
+                MessageBox.Show("تاريخ النهاية يجب أن يكون بعد تاريخ اليوم", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpEndDate.Focus();
+                return;
+            }
+
+            try
+            {
+                bool updated = examsManager.UpdateExam(selectedExamId, examName, periodTime, endDate, isActive);
+                if (updated)
                 {
                     MessageBox.Show("تم تعديل بيانات الامتحان بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     RefreshExamGrid();
                     SetInitialState();
                 }
+                else
+                {
+                    MessageBox.Show("حدث خطأ أثناء تعديل الامتحان", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -166,19 +211,21 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 txtExamName.Text = row.Cells["ExamName"].Value.ToString();
                 nudPeriodTime.Value = Convert.ToInt32(row.Cells["PeriodTimeInMinutes"].Value);
                 dtpEndDate.Value = Convert.ToDateTime(row.Cells["EndDate"].Value);
+                dtpStartDate.Value = Convert.ToDateTime(row.Cells["CreatedAt"].Value);
                 rdBtnActive.Checked = Convert.ToBoolean(row.Cells["IsActive"].Value);
                 rdBtnNotActive.Checked = !rdBtnActive.Checked;
 
                 txtExamName.ReadOnly = true;
-                nudPeriodTime.ReadOnly = true;
+                nudPeriodTime.Enabled = false;
                 dtpEndDate.Enabled = false;
+                dtpStartDate.Enabled = false;
                 rdBtnActive.Enabled = false;
                 rdBtnNotActive.Enabled = false;
 
                 btnEditExam.Enabled = true;
                 btnDeleteExam.Enabled = true;
                 btnSaveEdit.Enabled = false;
-                btnAddExam.Enabled = true;
+                btnAddNewExam.Enabled = true;
             }
         }
 
@@ -193,10 +240,62 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             FrmManageQuestions frmQuestions = new FrmManageQuestions(selectedExamId);
             frmQuestions.ShowDialog();
         }
-
-        private void btnSaveEdit_Click_1(object sender, EventArgs e)
+    
+        private void btnInsertExam_Click(object sender, EventArgs e)
         {
+            string examName = txtExamName.Text.Trim();
+            int periodTime = (int)nudPeriodTime.Value;
+            DateTime startDate = dtpStartDate.Value;
+            DateTime endDate = dtpEndDate.Value;
+            bool isActive = rdBtnActive.Checked;
 
+            if (string.IsNullOrWhiteSpace(examName))
+            {
+                MessageBox.Show("اسم الامتحان مطلوب", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtExamName.Focus();
+                return;
+            }
+
+            if (examName.Length < 3)
+            {
+                MessageBox.Show("اسم الامتحان قصير جدًا", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtExamName.Focus();
+                return;
+            }
+
+            if (periodTime <= 0)
+            {
+                MessageBox.Show("مدة الامتحان يجب أن تكون أكبر من صفر", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                nudPeriodTime.Focus();
+                return;
+            }
+
+            if (endDate <= DateTime.Now)
+            {
+                MessageBox.Show("تاريخ النهاية يجب أن يكون بعد تاريخ اليوم", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpEndDate.Focus();
+                return;
+            }
+
+            try
+            {
+                bool added = examsManager.AddExam(examName, periodTime, endDate, isActive);
+                if (added)
+                {
+                    MessageBox.Show("تم إضافة الامتحان بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshExamGrid();
+                    ClearForm();
+                }
+                else
+                {
+                    MessageBox.Show("حدث خطأ أثناء إضافة الامتحان", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }

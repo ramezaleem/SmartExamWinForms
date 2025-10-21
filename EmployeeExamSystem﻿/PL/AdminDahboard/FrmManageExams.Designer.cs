@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtExamName = new System.Windows.Forms.TextBox();
-            this.btnAddExam = new System.Windows.Forms.Button();
+            this.btnAddNewExam = new System.Windows.Forms.Button();
             this.btnEditExam = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSaveEdit = new System.Windows.Forms.Button();
@@ -50,6 +50,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvExams = new System.Windows.Forms.DataGridView();
+            this.btnInsertExam = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeriodTime)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             this.btnDeleteExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeleteExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteExam.Location = new System.Drawing.Point(557, 62);
+            this.btnDeleteExam.Location = new System.Drawing.Point(610, 50);
             this.btnDeleteExam.Name = "btnDeleteExam";
             this.btnDeleteExam.Size = new System.Drawing.Size(75, 33);
             this.btnDeleteExam.TabIndex = 0;
@@ -114,23 +115,23 @@
             this.txtExamName.Size = new System.Drawing.Size(267, 27);
             this.txtExamName.TabIndex = 6;
             // 
-            // btnAddExam
+            // btnAddNewExam
             // 
-            this.btnAddExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAddExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddExam.Location = new System.Drawing.Point(797, 62);
-            this.btnAddExam.Name = "btnAddExam";
-            this.btnAddExam.Size = new System.Drawing.Size(75, 33);
-            this.btnAddExam.TabIndex = 4;
-            this.btnAddExam.Text = "إضافة";
-            this.btnAddExam.UseVisualStyleBackColor = false;
-            this.btnAddExam.Click += new System.EventHandler(this.btnAddExam_Click);
+            this.btnAddNewExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddNewExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewExam.Location = new System.Drawing.Point(842, 50);
+            this.btnAddNewExam.Name = "btnAddNewExam";
+            this.btnAddNewExam.Size = new System.Drawing.Size(154, 33);
+            this.btnAddNewExam.TabIndex = 4;
+            this.btnAddNewExam.Text = "إضافة امتحان جديد";
+            this.btnAddNewExam.UseVisualStyleBackColor = false;
+            this.btnAddNewExam.Click += new System.EventHandler(this.btnAddNewExam_Click);
             // 
             // btnEditExam
             // 
             this.btnEditExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditExam.Location = new System.Drawing.Point(677, 62);
+            this.btnEditExam.Location = new System.Drawing.Point(726, 50);
             this.btnEditExam.Name = "btnEditExam";
             this.btnEditExam.Size = new System.Drawing.Size(75, 33);
             this.btnEditExam.TabIndex = 3;
@@ -140,8 +141,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnInsertExam);
             this.groupBox2.Controls.Add(this.btnSaveEdit);
-            this.groupBox2.Controls.Add(this.btnAddExam);
+            this.groupBox2.Controls.Add(this.btnAddNewExam);
             this.groupBox2.Controls.Add(this.btnEditExam);
             this.groupBox2.Controls.Add(this.btnManageQuestions);
             this.groupBox2.Controls.Add(this.btnDeleteExam);
@@ -157,19 +159,19 @@
             // 
             this.btnSaveEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnSaveEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveEdit.Location = new System.Drawing.Point(226, 62);
+            this.btnSaveEdit.Location = new System.Drawing.Point(110, 50);
             this.btnSaveEdit.Name = "btnSaveEdit";
-            this.btnSaveEdit.Size = new System.Drawing.Size(75, 33);
+            this.btnSaveEdit.Size = new System.Drawing.Size(98, 33);
             this.btnSaveEdit.TabIndex = 5;
-            this.btnSaveEdit.Text = "حفظ";
+            this.btnSaveEdit.Text = "حفظ التعديل";
             this.btnSaveEdit.UseVisualStyleBackColor = false;
-            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click_1);
+            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
             // 
             // btnManageQuestions
             // 
             this.btnManageQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnManageQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageQuestions.Location = new System.Drawing.Point(346, 62);
+            this.btnManageQuestions.Location = new System.Drawing.Point(403, 50);
             this.btnManageQuestions.Name = "btnManageQuestions";
             this.btnManageQuestions.Size = new System.Drawing.Size(166, 33);
             this.btnManageQuestions.TabIndex = 1;
@@ -293,6 +295,18 @@
             this.dgvExams.TabIndex = 0;
             this.dgvExams.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExams_CellClick);
             // 
+            // btnInsertExam
+            // 
+            this.btnInsertExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnInsertExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsertExam.Location = new System.Drawing.Point(249, 50);
+            this.btnInsertExam.Name = "btnInsertExam";
+            this.btnInsertExam.Size = new System.Drawing.Size(113, 33);
+            this.btnInsertExam.TabIndex = 6;
+            this.btnInsertExam.Text = "حفظ الامتحان";
+            this.btnInsertExam.UseVisualStyleBackColor = false;
+            this.btnInsertExam.Click += new System.EventHandler(this.btnInsertExam_Click);
+            // 
             // FrmManageExams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +343,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtExamName;
-        private System.Windows.Forms.Button btnAddExam;
+        private System.Windows.Forms.Button btnAddNewExam;
         private System.Windows.Forms.Button btnEditExam;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnManageQuestions;
@@ -344,5 +358,6 @@
         private System.Windows.Forms.RadioButton rdBtnActive;
         private System.Windows.Forms.RadioButton rdBtnNotActive;
         private System.Windows.Forms.Button btnSaveEdit;
+        private System.Windows.Forms.Button btnInsertExam;
     }
 }
