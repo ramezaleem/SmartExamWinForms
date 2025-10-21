@@ -1,0 +1,14 @@
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\bin\Debug\EmployeeExamSystem﻿.exe.config
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\bin\Debug\EmployeeExamSystem﻿.exe
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\bin\Debug\EmployeeExamSystem﻿.pdb
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.csproj.AssemblyReference.cache
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.LoginForm.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.Properties.Resources.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.csproj.GenerateResource.cache
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.csproj.CoreCompileInputs.cache
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.exe
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.pdb
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDashboard.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmManageExams.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmAdminDashboard.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmManageQuestions.resources
