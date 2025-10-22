@@ -109,7 +109,6 @@
             this.btnManageQuestions.TabIndex = 1;
             this.btnManageQuestions.Text = "إدارة الأسئلة";
             this.btnManageQuestions.UseVisualStyleBackColor = false;
-            this.btnManageQuestions.Click += new System.EventHandler(this.btnManageQuetions_Click);
             // 
             // btnManageExams
             // 

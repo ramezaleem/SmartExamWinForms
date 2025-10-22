@@ -50,28 +50,22 @@
     <Compile Include="BL\UserManager.cs" />
     <Compile Include="DAL\ExamsDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
-    <Compile Include="PL\AdminDahboard\AdminDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\AdminDahboard\AdminDashboard.Designer.cs">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\AdminDahboard\FrmAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\AdminDahboard\FrmAdminDashboard.Designer.cs">
       <DependentUpon>FrmAdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\AdminDahboard\FrmManageExams.cs">
+    <Compile Include="PL\AdminDahboard\Exams\FrmManageExams.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\AdminDahboard\FrmManageExams.Designer.cs">
+    <Compile Include="PL\AdminDahboard\Exams\FrmManageExams.Designer.cs">
       <DependentUpon>FrmManageExams.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\AdminDahboard\FrmManageQuestions.cs">
+    <Compile Include="PL\AdminDahboard\Questions\FrmManageQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\AdminDahboard\FrmManageQuestions.Designer.cs">
+    <Compile Include="PL\AdminDahboard\Questions\FrmManageQuestions.Designer.cs">
       <DependentUpon>FrmManageQuestions.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\AdminDahboard\FrmViewResults.cs">
@@ -79,6 +73,12 @@
     </Compile>
     <Compile Include="PL\AdminDahboard\FrmViewResults.Designer.cs">
       <DependentUpon>FrmViewResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AdminDahboard\Questions\FrmViewQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AdminDahboard\Questions\FrmViewQuestions.Designer.cs">
+      <DependentUpon>FrmViewQuestions.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\LoginForm.cs">
       <SubType>Form</SubType>
@@ -88,17 +88,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PL\AdminDahboard\AdminDashboard.resx">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\AdminDahboard\FrmAdminDashboard.resx">
       <DependentUpon>FrmAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\AdminDahboard\FrmManageExams.resx">
+    <EmbeddedResource Include="PL\AdminDahboard\Exams\FrmManageExams.resx">
       <DependentUpon>FrmManageExams.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\AdminDahboard\FrmManageQuestions.resx">
+    <EmbeddedResource Include="PL\AdminDahboard\Questions\FrmManageQuestions.resx">
       <DependentUpon>FrmManageQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AdminDahboard\Questions\FrmViewQuestions.resx">
+      <DependentUpon>FrmViewQuestions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

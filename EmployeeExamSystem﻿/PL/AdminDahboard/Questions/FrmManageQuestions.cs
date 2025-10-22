@@ -18,7 +18,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             InitializeComponent();
             _examId = examId;
         }
-
+     
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -26,8 +26,8 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
         private void FrmManageQuestions_Load(object sender, EventArgs e)
         {
-
         }
+     
 
         private void label1_Click(object sender, EventArgs e)
         {

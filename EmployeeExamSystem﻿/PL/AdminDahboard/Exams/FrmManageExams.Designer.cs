@@ -315,6 +315,7 @@
             this.dgvExams.Size = new System.Drawing.Size(1385, 187);
             this.dgvExams.TabIndex = 0;
             this.dgvExams.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExams_CellClick);
+            this.dgvExams.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExams_CellDoubleClick);
             this.dgvExams.SelectionChanged += new System.EventHandler(this.dgvExams_SelectionChanged);
             // 
             // FrmManageExams

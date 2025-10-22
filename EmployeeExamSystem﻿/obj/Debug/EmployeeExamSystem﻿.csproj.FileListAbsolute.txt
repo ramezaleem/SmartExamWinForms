@@ -8,7 +8,7 @@ D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\Employee
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.csproj.CoreCompileInputs.cache
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.exe
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem﻿.pdb
-D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDashboard.resources
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmManageExams.resources
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmAdminDashboard.resources
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmManageQuestions.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.Questions.FrmViewQuestions.resources

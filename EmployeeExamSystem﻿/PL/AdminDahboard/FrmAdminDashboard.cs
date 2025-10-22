@@ -12,7 +12,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 {
     public partial class FrmAdminDashboard : Form
     {
-        FrmManageExams frm = new FrmManageExams();
 
         public FrmAdminDashboard()
         {
@@ -95,9 +94,12 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
         }
 
-        private void btnManageQuetions_Click(object sender, EventArgs e)
-        {
+        //private void btnManageQuetions_Click(object sender, EventArgs e)
+        //{
+        //    FrmManageQuestions frm = new FrmManageQuestions();
+        //    frm.ShowDialog();
+        //}
 
-        }
+
     }
 }

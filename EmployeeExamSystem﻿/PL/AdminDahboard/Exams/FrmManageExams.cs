@@ -1,4 +1,5 @@
 ﻿using EmployeeExamSystem_.BL;
+using EmployeeExamSystem_.PL.AdminDahboard.Questions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -261,8 +262,10 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
                 txtExamName.Text = row.Cells["ExamName"].Value.ToString();
                 nudPeriodTime.Value = Convert.ToInt32(row.Cells["PeriodTimeInMinutes"].Value);
+
+                dtpStartDate.Value = Convert.ToDateTime(row.Cells["StartDate"].Value);
                 dtpEndDate.Value = Convert.ToDateTime(row.Cells["EndDate"].Value);
-                dtpStartDate.Value = Convert.ToDateTime(row.Cells["CreatedAt"].Value);
+
                 rdBtnActive.Checked = Convert.ToBoolean(row.Cells["IsActive"].Value);
                 rdBtnNotActive.Checked = !rdBtnActive.Checked;
 
@@ -279,6 +282,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 btnAddNewExam.Enabled = true;
             }
         }
+
 
         private void dgvExams_SelectionChanged(object sender, EventArgs e)
         {
@@ -364,7 +368,27 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-      
+
+        private void dgvExams_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int examId = Convert.ToInt32(dgvExams.Rows[e.RowIndex].Cells["ExamID"].Value);
+                    string examName = dgvExams.Rows[e.RowIndex].Cells["ExamName"].Value.ToString();
+
+                    FrmViewQuestions frm = new FrmViewQuestions(examId, examName);
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء فتح صفحة عرض الأسئلة:\n" + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
     }
 }
