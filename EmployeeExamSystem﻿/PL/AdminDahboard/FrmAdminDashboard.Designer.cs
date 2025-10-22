@@ -32,8 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnViewResults = new System.Windows.Forms.Button();
-            this.btnManageQuetions = new System.Windows.Forms.Button();
-            this.btnMnageExams = new System.Windows.Forms.Button();
+            this.btnManageQuestions = new System.Windows.Forms.Button();
+            this.btnManageExams = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.label1.Location = new System.Drawing.Point(331, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 25);
@@ -50,10 +50,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnViewResults);
-            this.groupBox1.Controls.Add(this.btnManageQuetions);
-            this.groupBox1.Controls.Add(this.btnMnageExams);
+            this.groupBox1.Controls.Add(this.btnManageQuestions);
+            this.groupBox1.Controls.Add(this.btnManageExams);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(169, 90);
             this.groupBox1.Name = "groupBox1";
@@ -65,8 +68,11 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(43)))), ((int)(((byte)(33)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(40, 261);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 29);
@@ -77,8 +83,11 @@
             // 
             // btnViewResults
             // 
-            this.btnViewResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(166)))), ((int)(((byte)(35)))));
+            this.btnViewResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(83)))));
+            this.btnViewResults.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewResults.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(92)))), ((int)(((byte)(67)))));
             this.btnViewResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewResults.ForeColor = System.Drawing.Color.White;
             this.btnViewResults.Location = new System.Drawing.Point(150, 194);
             this.btnViewResults.Name = "btnViewResults";
             this.btnViewResults.Size = new System.Drawing.Size(188, 33);
@@ -87,37 +96,47 @@
             this.btnViewResults.UseVisualStyleBackColor = false;
             this.btnViewResults.Click += new System.EventHandler(this.btnViewResults_Click);
             // 
-            // btnManageQuetions
+            // btnManageQuestions
             // 
-            this.btnManageQuetions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnManageQuetions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageQuetions.Location = new System.Drawing.Point(150, 129);
-            this.btnManageQuetions.Name = "btnManageQuetions";
-            this.btnManageQuetions.Size = new System.Drawing.Size(188, 33);
-            this.btnManageQuetions.TabIndex = 1;
-            this.btnManageQuetions.Text = "إدارة الأسئلة";
-            this.btnManageQuetions.UseVisualStyleBackColor = false;
+            this.btnManageQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.btnManageQuestions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageQuestions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(88)))), ((int)(((byte)(99)))));
+            this.btnManageQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageQuestions.ForeColor = System.Drawing.Color.White;
+            this.btnManageQuestions.Location = new System.Drawing.Point(150, 129);
+            this.btnManageQuestions.Name = "btnManageQuestions";
+            this.btnManageQuestions.Size = new System.Drawing.Size(188, 33);
+            this.btnManageQuestions.TabIndex = 1;
+            this.btnManageQuestions.Text = "إدارة الأسئلة";
+            this.btnManageQuestions.UseVisualStyleBackColor = false;
+            this.btnManageQuestions.Click += new System.EventHandler(this.btnManageQuetions_Click);
             // 
-            // btnMnageExams
+            // btnManageExams
             // 
-            this.btnMnageExams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(144)))), ((int)(((byte)(226)))));
-            this.btnMnageExams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMnageExams.Location = new System.Drawing.Point(150, 66);
-            this.btnMnageExams.Name = "btnMnageExams";
-            this.btnMnageExams.Size = new System.Drawing.Size(188, 33);
-            this.btnMnageExams.TabIndex = 0;
-            this.btnMnageExams.Text = "إدارة الامتحانات";
-            this.btnMnageExams.UseVisualStyleBackColor = false;
+            this.btnManageExams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnManageExams.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageExams.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(97)))), ((int)(((byte)(141)))));
+            this.btnManageExams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageExams.ForeColor = System.Drawing.Color.White;
+            this.btnManageExams.Location = new System.Drawing.Point(150, 66);
+            this.btnManageExams.Name = "btnManageExams";
+            this.btnManageExams.Size = new System.Drawing.Size(188, 33);
+            this.btnManageExams.TabIndex = 0;
+            this.btnManageExams.Text = "إدارة الامتحانات";
+            this.btnManageExams.UseVisualStyleBackColor = false;
+            this.btnManageExams.Click += new System.EventHandler(this.btnManageExams_Click);
             // 
             // FrmAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmAdminDashboard";
@@ -125,6 +144,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "لوحة تحكم المسؤول :";
+            this.Load += new System.EventHandler(this.FrmAdminDashboard_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,9 +155,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnMnageExams;
+        private System.Windows.Forms.Button btnManageExams;
         private System.Windows.Forms.Button btnViewResults;
-        private System.Windows.Forms.Button btnManageQuetions;
+        private System.Windows.Forms.Button btnManageQuestions;
         private System.Windows.Forms.Button btnExit;
     }
 }
