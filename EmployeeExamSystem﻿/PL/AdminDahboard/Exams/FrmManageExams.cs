@@ -24,6 +24,8 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
         {
 
             InitializeComponent();
+            dgvExams.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#5DADE2");
+
             // إضافة امتحان جديد
             btnAddNewExam.BackColor = ColorTranslator.FromHtml("#1E8449");
             btnAddNewExam.ForeColor = Color.White;

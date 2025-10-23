@@ -21,7 +21,7 @@ namespace EmployeeExamSystem﻿
             //Application.Run(new LoginForm());
             //Application.Run(new FrmAdminDashboard());
             //Application.Run(new FrmManageQuestions());
-            //Application.Run(new FrmManageExams());
+            Application.Run(new FrmManageExams());
         }
     }
 }

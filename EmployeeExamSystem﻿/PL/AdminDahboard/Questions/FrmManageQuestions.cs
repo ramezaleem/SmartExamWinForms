@@ -23,8 +23,38 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             _examId = examId;
             _examName = examName;
             _questionsBL = new QuestionsBL();
-        }
 
+            TextBox[] txts = { txtRefQuestion, txtOptionA, txtOptionB, txtOptionC, txtOptionD };
+            foreach (var txt in txts)
+            {
+                txt.BackColor = Color.White;
+                txt.ForeColor = ColorTranslator.FromHtml("#34495E");
+                txt.BorderStyle = BorderStyle.FixedSingle;
+            }
+
+            dgvQuestions.BackgroundColor = Color.White;
+            dgvQuestions.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#2C3E50");
+            dgvQuestions.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvQuestions.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#34495E");
+            dgvQuestions.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#5DADE2");
+
+
+            SetupButton(btnAddNewQuestion, "#1E8449", "#27AE60", "#196F3D");
+            SetupButton(btnEditQuestion, "#5D6D7E", "#85929E", "#4A5863");
+            SetupButton(btnDeleteQuestion, "#C0392B", "#E74C3C", "#922B21");
+            SetupButton(btnSaveQuestion, "#117A65", "#148F77", "#0E6655");
+        }
+        private void SetupButton(Button btn, string mainColor, string hoverColor, string borderColor)
+        {
+            btn.BackColor = ColorTranslator.FromHtml(mainColor);
+            btn.ForeColor = Color.White;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderColor = ColorTranslator.FromHtml(borderColor);
+            btn.FlatAppearance.BorderSize = 1;
+
+            btn.MouseEnter += (s, e) => btn.BackColor = ColorTranslator.FromHtml(hoverColor);
+            btn.MouseLeave += (s, e) => btn.BackColor = ColorTranslator.FromHtml(mainColor);
+        }
         private void FrmManageQuestions_Load(object sender, EventArgs e)
         {
             lblNameOfExam.Text = $"الامتحان: {_examName}";
