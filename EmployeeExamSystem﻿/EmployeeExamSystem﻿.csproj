@@ -48,9 +48,11 @@
   <ItemGroup>
     <Compile Include="BL\ExamsManager.cs" />
     <Compile Include="BL\QuestionsBL.cs" />
+    <Compile Include="BL\ResultsBL.cs" />
     <Compile Include="BL\UserManager.cs" />
     <Compile Include="DAL\ExamsDAL.cs" />
     <Compile Include="DAL\QuestionsDAL.cs" />
+    <Compile Include="DAL\ResultsDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="PL\AdminDahboard\FrmAdminDashboard.cs">
       <SubType>Form</SubType>
@@ -70,10 +72,16 @@
     <Compile Include="PL\AdminDahboard\Questions\FrmManageQuestions.Designer.cs">
       <DependentUpon>FrmManageQuestions.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\AdminDahboard\FrmViewResults.cs">
+    <Compile Include="PL\AdminDahboard\Results\FrmViewResultOfExam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\AdminDahboard\FrmViewResults.Designer.cs">
+    <Compile Include="PL\AdminDahboard\Results\FrmViewResultOfExam.Designer.cs">
+      <DependentUpon>FrmViewResultOfExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AdminDahboard\Results\FrmViewResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AdminDahboard\Results\FrmViewResults.Designer.cs">
       <DependentUpon>FrmViewResults.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\AdminDahboard\Questions\FrmViewQuestions.cs">
@@ -101,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\AdminDahboard\Questions\FrmViewQuestions.resx">
       <DependentUpon>FrmViewQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AdminDahboard\Results\FrmViewResultOfExam.resx">
+      <DependentUpon>FrmViewResultOfExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AdminDahboard\Results\FrmViewResults.resx">
+      <DependentUpon>FrmViewResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
