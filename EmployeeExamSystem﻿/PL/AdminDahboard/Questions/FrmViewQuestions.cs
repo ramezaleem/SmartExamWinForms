@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,6 +17,20 @@ namespace EmployeeExamSystem_.PL.AdminDahboard.Questions
             InitializeComponent();
             _examId = examId;
             _examName = examName;
+
+            this.BackColor = ColorTranslator.FromHtml("#F8F9F9");
+
+            lblNameOfExam.ForeColor = ColorTranslator.FromHtml("#2C3E50");
+            lblNameOfExam.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            dgvQuestions.BackgroundColor = Color.White;
+            dgvQuestions.EnableHeadersVisualStyles = false;
+            dgvQuestions.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#2E86C1");
+            dgvQuestions.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvQuestions.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#34495E");
+            dgvQuestions.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#5DADE2");
+            dgvQuestions.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvQuestions.GridColor = ColorTranslator.FromHtml("#D6DBDF");
         }
 
         private void FrmViewQuestions_Load(object sender, EventArgs e)
