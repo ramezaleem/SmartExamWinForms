@@ -308,7 +308,8 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             }
 
             int examId = Convert.ToInt32(dgvExams.SelectedRows[0].Cells["ExamID"].Value);
-            FrmManageQuestions frm = new FrmManageQuestions(examId);
+            string examName = dgvExams.SelectedRows[0].Cells["ExamName"].Value.ToString();
+            FrmManageQuestions frm = new FrmManageQuestions(examId, examName);
             frm.ShowDialog();
         }
 

@@ -31,36 +31,45 @@ namespace EmployeeExamSystem_.PL.AdminDahboard.Questions
             {
                 DataTable questions = GetQuestionsByExamId(_examId);
 
-                // لو مفيش بيانات نرجع بدري
+                // لو مفيش بيانات هننشئ جدول فاضي بنفس الأعمدة الأساسية
                 if (questions == null || questions.Rows.Count == 0)
                 {
-                    dgvQuestions.DataSource = null;
-                    return;
+                    DataTable emptyTable = new DataTable();
+                    emptyTable.Columns.Add("QuestionNumber", typeof(int));
+                    emptyTable.Columns.Add("QuestionText", typeof(string));
+                    emptyTable.Columns.Add("OptionA", typeof(string));
+                    emptyTable.Columns.Add("OptionB", typeof(string));
+                    emptyTable.Columns.Add("OptionC", typeof(string));
+                    emptyTable.Columns.Add("OptionD", typeof(string));
+                    emptyTable.Columns.Add("CorrectOption", typeof(string));
+
+                    dgvQuestions.DataSource = emptyTable;
                 }
-
-                // التأكد من وجود العمود QuestionNumber
-                if (!questions.Columns.Contains("QuestionNumber"))
-                    questions.Columns.Add("QuestionNumber", typeof(int));
-
-                // ترتيب الأسئلة حسب QuestionID (لضمان الترتيب الصحيح)
-                var orderedRows = questions.AsEnumerable()
-                                           .OrderBy(r => Convert.ToInt32(r["QuestionID"]))
-                                           .ToList();
-
-                // تعبئة أرقام الأسئلة المتسلسلة
-                for (int i = 0; i < orderedRows.Count; i++)
+                else
                 {
-                    orderedRows[i]["QuestionNumber"] = i + 1;
+                    // التأكد من وجود العمود QuestionNumber
+                    if (!questions.Columns.Contains("QuestionNumber"))
+                        questions.Columns.Add("QuestionNumber", typeof(int));
+
+                    // ترتيب الأسئلة حسب QuestionID (لضمان الترتيب الصحيح)
+                    var orderedRows = questions.AsEnumerable()
+                                               .OrderBy(r => Convert.ToInt32(r["QuestionID"]))
+                                               .ToList();
+
+                    // تعبئة أرقام الأسئلة المتسلسلة
+                    for (int i = 0; i < orderedRows.Count; i++)
+                    {
+                        orderedRows[i]["QuestionNumber"] = i + 1;
+                    }
+
+                    dgvQuestions.DataSource = orderedRows.CopyToDataTable();
                 }
 
-                // إعادة تحميل البيانات بعد الترتيب
-                dgvQuestions.DataSource = orderedRows.CopyToDataTable();
-
-                // إخفاء عمود QuestionID
+                // إخفاء عمود QuestionID لو موجود
                 if (dgvQuestions.Columns.Contains("QuestionID"))
                     dgvQuestions.Columns["QuestionID"].Visible = false;
 
-                // تنسيق عمود رقم السؤال
+                // تنسيق الأعمدة
                 if (dgvQuestions.Columns.Contains("QuestionNumber"))
                 {
                     dgvQuestions.Columns["QuestionNumber"].HeaderText = "رقم السؤال";
@@ -68,12 +77,12 @@ namespace EmployeeExamSystem_.PL.AdminDahboard.Questions
                     dgvQuestions.Columns["QuestionNumber"].DisplayIndex = 0;
                 }
 
-                // تنسيقات الأعمدة الأخرى
                 if (dgvQuestions.Columns.Contains("QuestionText"))
                 {
                     dgvQuestions.Columns["QuestionText"].HeaderText = "نص السؤال";
                     dgvQuestions.Columns["QuestionText"].Width = 500;
                 }
+
                 if (dgvQuestions.Columns.Contains("OptionA"))
                 {
                     dgvQuestions.Columns["OptionA"].HeaderText = "الاختيار أ";
@@ -113,6 +122,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard.Questions
                 MessageBox.Show($"حدث خطأ أثناء تحميل الأسئلة:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private DataTable GetQuestionsByExamId(int examId)
         {

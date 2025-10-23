@@ -24,22 +24,22 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             btnManageExams.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#1F618D");
             btnManageExams.FlatAppearance.BorderSize = 1;
 
-            btnManageQuestions.BackColor = ColorTranslator.FromHtml("#5D6D7E");
-            btnManageQuestions.ForeColor = Color.White;
-            btnManageQuestions.FlatStyle = FlatStyle.Flat;
-            btnManageQuestions.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#4A5863");
-            btnManageQuestions.FlatAppearance.BorderSize = 1;
+            //btnManageQuestions.BackColor = ColorTranslator.FromHtml("#5D6D7E");
+            //btnManageQuestions.ForeColor = Color.White;
+            //btnManageQuestions.FlatStyle = FlatStyle.Flat;
+            //btnManageQuestions.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#4A5863");
+            //btnManageQuestions.FlatAppearance.BorderSize = 1;
 
 
             // Hover effect:
-            btnManageQuestions.MouseEnter += (s, e) =>
-            {
-                btnManageQuestions.BackColor = ColorTranslator.FromHtml("#85929E");
-            };
-            btnManageQuestions.MouseLeave += (s, e) =>
-            {
-                btnManageQuestions.BackColor = ColorTranslator.FromHtml("#5D6D7E");
-            };
+            //btnManageQuestions.MouseEnter += (s, e) =>
+            //{
+            //    btnManageQuestions.BackColor = ColorTranslator.FromHtml("#85929E");
+            //};
+            //btnManageQuestions.MouseLeave += (s, e) =>
+            //{
+            //    btnManageQuestions.BackColor = ColorTranslator.FromHtml("#5D6D7E");
+            //};
 
             btnManageExams.MouseEnter += (s, e) =>
             {

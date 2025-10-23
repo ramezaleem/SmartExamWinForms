@@ -14,17 +14,20 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
     public partial class FrmManageQuestions : Form
     {
         private readonly int _examId;
+        private readonly string _examName;
         private QuestionsBL _questionsBL = new QuestionsBL();
         private int _selectedQuestionId = 0;
-        public FrmManageQuestions(int examId)
+        public FrmManageQuestions(int examId, string examName)
         {
             InitializeComponent();
             _examId = examId;
+            _examName = examName;
             _questionsBL = new QuestionsBL();
         }
 
         private void FrmManageQuestions_Load(object sender, EventArgs e)
         {
+            lblNameOfExam.Text = $"الامتحان: {_examName}";
             LoadQuestionsForExam();
             ResetInputs();
         }

@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnViewResults = new System.Windows.Forms.Button();
-            this.btnManageQuestions = new System.Windows.Forms.Button();
             this.btnManageExams = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +52,6 @@
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnViewResults);
-            this.groupBox1.Controls.Add(this.btnManageQuestions);
             this.groupBox1.Controls.Add(this.btnManageExams);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -61,7 +59,7 @@
             this.groupBox1.Location = new System.Drawing.Point(169, 90);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(472, 309);
+            this.groupBox1.Size = new System.Drawing.Size(472, 245);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "العمليات المتاحة :";
@@ -73,7 +71,7 @@
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(43)))), ((int)(((byte)(33)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(40, 261);
+            this.btnExit.Location = new System.Drawing.Point(41, 199);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 29);
             this.btnExit.TabIndex = 3;
@@ -88,27 +86,13 @@
             this.btnViewResults.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(92)))), ((int)(((byte)(67)))));
             this.btnViewResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewResults.ForeColor = System.Drawing.Color.White;
-            this.btnViewResults.Location = new System.Drawing.Point(150, 194);
+            this.btnViewResults.Location = new System.Drawing.Point(150, 130);
             this.btnViewResults.Name = "btnViewResults";
             this.btnViewResults.Size = new System.Drawing.Size(188, 33);
             this.btnViewResults.TabIndex = 2;
             this.btnViewResults.Text = "عرض النتائج  ";
             this.btnViewResults.UseVisualStyleBackColor = false;
             this.btnViewResults.Click += new System.EventHandler(this.btnViewResults_Click);
-            // 
-            // btnManageQuestions
-            // 
-            this.btnManageQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
-            this.btnManageQuestions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManageQuestions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(88)))), ((int)(((byte)(99)))));
-            this.btnManageQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageQuestions.ForeColor = System.Drawing.Color.White;
-            this.btnManageQuestions.Location = new System.Drawing.Point(150, 129);
-            this.btnManageQuestions.Name = "btnManageQuestions";
-            this.btnManageQuestions.Size = new System.Drawing.Size(188, 33);
-            this.btnManageQuestions.TabIndex = 1;
-            this.btnManageQuestions.Text = "إدارة الأسئلة";
-            this.btnManageQuestions.UseVisualStyleBackColor = false;
             // 
             // btnManageExams
             // 
@@ -156,7 +140,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnManageExams;
         private System.Windows.Forms.Button btnViewResults;
-        private System.Windows.Forms.Button btnManageQuestions;
         private System.Windows.Forms.Button btnExit;
     }
 }
