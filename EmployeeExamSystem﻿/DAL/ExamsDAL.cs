@@ -8,6 +8,16 @@ namespace EmployeeExamSystem_.DAL
     {
         private string connectionString = "Server=.;Database=EmployeesTestDB;Trusted_Connection=True;";
 
+        public int GetNextExamId()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(ExamID), 0) + 1 FROM Exams", con);
+                con.Open();
+                return (int)cmd.ExecuteScalar();
+            }
+        }
+
         public DataTable GetAllExams()
         {
             DataTable dt = new DataTable();
@@ -25,23 +35,22 @@ namespace EmployeeExamSystem_.DAL
             return dt;
         }
 
-        public bool AddExam(string name, int periodTime, DateTime startDate, DateTime endDate, bool isActive)
+        public bool AddExam(int examId, string examName, int periodTime, DateTime startDate, DateTime endDate, bool isActive)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                string query = @"INSERT INTO Exams (ExamID, ExamName, PeriodTimeInMinutes, StartDate, EndDate, CreatedAt, IsActive)
+                         VALUES (@ExamID, @ExamName, @PeriodTimeInMinutes, @StartDate, @EndDate, GETDATE(), @IsActive)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@ExamID", examId);
+                cmd.Parameters.AddWithValue("@ExamName", examName);
+                cmd.Parameters.AddWithValue("@PeriodTimeInMinutes", periodTime);
+                cmd.Parameters.AddWithValue("@StartDate", startDate);
+                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                cmd.Parameters.AddWithValue("@IsActive", isActive);
+
                 con.Open();
-                string query = @"INSERT INTO Exams 
-                         (ExamName, PeriodTimeInMinutes, StartDate, EndDate, CreatedAt, LastModifiedDate, IsActive)
-                         VALUES (@Name, @Time, @StartDate, @EndDate, GETDATE(), NULL, @IsActive)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Time", periodTime);
-                    cmd.Parameters.AddWithValue("@StartDate", startDate);
-                    cmd.Parameters.AddWithValue("@EndDate", endDate);
-                    cmd.Parameters.AddWithValue("@IsActive", isActive);
-                    return cmd.ExecuteNonQuery() > 0;
-                }
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
 

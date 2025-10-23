@@ -7,17 +7,22 @@ namespace EmployeeExamSystem_.BL
 {
     internal class ExamsManager
     {
-        ExamsDAL examsDAL = new ExamsDAL();
+        private readonly ExamsDAL examsDAL = new ExamsDAL();
 
         public DataTable GetAllExams()
         {
             return examsDAL.GetAllExams();
         }
-
-        public bool AddExam(string name, int periodTime, DateTime startDate, DateTime endDate, bool isActive)
+        public int GetNextExamId()
         {
-            if (!ValidateExamData(name, periodTime, startDate, endDate)) return false;
-            return examsDAL.AddExam(name, periodTime, startDate, endDate, isActive);
+            return examsDAL.GetNextExamId();
+        }
+
+
+        public bool AddExam(string examName, int periodTime, DateTime startDate, DateTime endDate, bool isActive)
+        {
+            int nextId = examsDAL.GetNextExamId();
+            return examsDAL.AddExam(nextId, examName, periodTime, startDate, endDate, isActive);
         }
 
         public bool UpdateExam(int examId, string name, int periodTime, DateTime startDate, DateTime endDate, bool isActive)

@@ -22,6 +22,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
 
         public FrmManageExams()
         {
+
             InitializeComponent();
         }
 
@@ -115,7 +116,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 dgvExams.Columns["IsActive"].HeaderText = "فعال";
                 dgvExams.Columns["IsActive"].Width = 75;
             }
-
+            dgvExams.ClearSelection();
             ClearForm();
         }
 
@@ -283,7 +284,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             }
         }
 
-
         private void dgvExams_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvExams == null || dgvExams.SelectedRows == null)
@@ -388,7 +388,6 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             }
         }
 
-
-
+    
     }
 }

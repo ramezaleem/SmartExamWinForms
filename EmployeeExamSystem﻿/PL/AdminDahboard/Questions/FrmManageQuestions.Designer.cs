@@ -45,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSaveEditQuestion = new System.Windows.Forms.Button();
             this.btnAddNewQuestion = new System.Windows.Forms.Button();
             this.btnEditQuestion = new System.Windows.Forms.Button();
             this.btnSaveQuestion = new System.Windows.Forms.Button();
@@ -78,18 +77,17 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 79);
+            this.groupBox1.Location = new System.Drawing.Point(9, 91);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(767, 276);
+            this.groupBox1.Size = new System.Drawing.Size(1390, 294);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "أسئلة الامتحان :";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // radioBtnCorrectOptionB
             // 
             this.radioBtnCorrectOptionB.AutoSize = true;
-            this.radioBtnCorrectOptionB.Location = new System.Drawing.Point(17, 161);
+            this.radioBtnCorrectOptionB.Location = new System.Drawing.Point(235, 165);
             this.radioBtnCorrectOptionB.Name = "radioBtnCorrectOptionB";
             this.radioBtnCorrectOptionB.Size = new System.Drawing.Size(146, 23);
             this.radioBtnCorrectOptionB.TabIndex = 15;
@@ -100,7 +98,7 @@
             // radioBtnCorrectOptionC
             // 
             this.radioBtnCorrectOptionC.AutoSize = true;
-            this.radioBtnCorrectOptionC.Location = new System.Drawing.Point(17, 205);
+            this.radioBtnCorrectOptionC.Location = new System.Drawing.Point(235, 209);
             this.radioBtnCorrectOptionC.Name = "radioBtnCorrectOptionC";
             this.radioBtnCorrectOptionC.Size = new System.Drawing.Size(146, 23);
             this.radioBtnCorrectOptionC.TabIndex = 14;
@@ -111,7 +109,7 @@
             // radioBtnCorrectOptionD
             // 
             this.radioBtnCorrectOptionD.AutoSize = true;
-            this.radioBtnCorrectOptionD.Location = new System.Drawing.Point(17, 249);
+            this.radioBtnCorrectOptionD.Location = new System.Drawing.Point(235, 253);
             this.radioBtnCorrectOptionD.Name = "radioBtnCorrectOptionD";
             this.radioBtnCorrectOptionD.Size = new System.Drawing.Size(146, 23);
             this.radioBtnCorrectOptionD.TabIndex = 13;
@@ -122,7 +120,7 @@
             // radioBtnCorrectOptionA
             // 
             this.radioBtnCorrectOptionA.AutoSize = true;
-            this.radioBtnCorrectOptionA.Location = new System.Drawing.Point(17, 117);
+            this.radioBtnCorrectOptionA.Location = new System.Drawing.Point(235, 121);
             this.radioBtnCorrectOptionA.Name = "radioBtnCorrectOptionA";
             this.radioBtnCorrectOptionA.Size = new System.Drawing.Size(146, 23);
             this.radioBtnCorrectOptionA.TabIndex = 11;
@@ -133,106 +131,94 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(635, 85);
+            this.label6.Location = new System.Drawing.Point(853, 89);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "الاختيارات :";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtOptionD
             // 
-            this.txtOptionD.Location = new System.Drawing.Point(278, 247);
+            this.txtOptionD.Location = new System.Drawing.Point(496, 251);
             this.txtOptionD.Name = "txtOptionD";
             this.txtOptionD.Size = new System.Drawing.Size(275, 27);
             this.txtOptionD.TabIndex = 9;
-            this.txtOptionD.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtOptionC
             // 
-            this.txtOptionC.Location = new System.Drawing.Point(278, 203);
+            this.txtOptionC.Location = new System.Drawing.Point(496, 207);
             this.txtOptionC.Name = "txtOptionC";
             this.txtOptionC.Size = new System.Drawing.Size(275, 27);
             this.txtOptionC.TabIndex = 8;
-            this.txtOptionC.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtOptionB
             // 
-            this.txtOptionB.Location = new System.Drawing.Point(278, 159);
+            this.txtOptionB.Location = new System.Drawing.Point(496, 163);
             this.txtOptionB.Name = "txtOptionB";
             this.txtOptionB.Size = new System.Drawing.Size(275, 27);
             this.txtOptionB.TabIndex = 7;
-            this.txtOptionB.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtOptionA
             // 
-            this.txtOptionA.Location = new System.Drawing.Point(278, 115);
+            this.txtOptionA.Location = new System.Drawing.Point(496, 119);
             this.txtOptionA.Name = "txtOptionA";
             this.txtOptionA.Size = new System.Drawing.Size(275, 27);
             this.txtOptionA.TabIndex = 6;
-            this.txtOptionA.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtRefQuestion
             // 
-            this.txtRefQuestion.Location = new System.Drawing.Point(278, 28);
+            this.txtRefQuestion.Location = new System.Drawing.Point(496, 32);
             this.txtRefQuestion.Name = "txtRefQuestion";
             this.txtRefQuestion.Size = new System.Drawing.Size(275, 27);
             this.txtRefQuestion.TabIndex = 5;
-            this.txtRefQuestion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(598, 119);
+            this.label5.Location = new System.Drawing.Point(816, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "الاختيار الأول :";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(598, 163);
+            this.label4.Location = new System.Drawing.Point(816, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "الاختيار الثاني :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(598, 207);
+            this.label3.Location = new System.Drawing.Point(816, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "الاختيار الثالث :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(598, 251);
+            this.label2.Location = new System.Drawing.Point(816, 255);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "الاختيار الرابع :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(635, 32);
+            this.label1.Location = new System.Drawing.Point(853, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "نص السؤال :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnSaveEditQuestion);
             this.groupBox2.Controls.Add(this.btnAddNewQuestion);
             this.groupBox2.Controls.Add(this.btnEditQuestion);
             this.groupBox2.Controls.Add(this.btnSaveQuestion);
@@ -240,40 +226,28 @@
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 415);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(767, 100);
+            this.groupBox2.Size = new System.Drawing.Size(1390, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات المتاحة :";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // btnSaveEditQuestion
-            // 
-            this.btnSaveEditQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSaveEditQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveEditQuestion.Location = new System.Drawing.Point(21, 45);
-            this.btnSaveEditQuestion.Name = "btnSaveEditQuestion";
-            this.btnSaveEditQuestion.Size = new System.Drawing.Size(142, 33);
-            this.btnSaveEditQuestion.TabIndex = 9;
-            this.btnSaveEditQuestion.Text = "حفظ التعديل";
-            this.btnSaveEditQuestion.UseVisualStyleBackColor = false;
             // 
             // btnAddNewQuestion
             // 
             this.btnAddNewQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAddNewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewQuestion.Location = new System.Drawing.Point(537, 45);
+            this.btnAddNewQuestion.Location = new System.Drawing.Point(801, 48);
             this.btnAddNewQuestion.Name = "btnAddNewQuestion";
             this.btnAddNewQuestion.Size = new System.Drawing.Size(183, 33);
             this.btnAddNewQuestion.TabIndex = 8;
             this.btnAddNewQuestion.Text = "إضافة سؤال جديد";
             this.btnAddNewQuestion.UseVisualStyleBackColor = false;
-            this.btnAddNewQuestion.Click += new System.EventHandler(this.btnAddQuestion_Click);
+            this.btnAddNewQuestion.Click += new System.EventHandler(this.btnAddNewQuestion_Click);
             // 
             // btnEditQuestion
             // 
             this.btnEditQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditQuestion.Location = new System.Drawing.Point(432, 45);
+            this.btnEditQuestion.Location = new System.Drawing.Point(657, 48);
             this.btnEditQuestion.Name = "btnEditQuestion";
             this.btnEditQuestion.Size = new System.Drawing.Size(94, 33);
             this.btnEditQuestion.TabIndex = 7;
@@ -285,7 +259,7 @@
             // 
             this.btnSaveQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSaveQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveQuestion.Location = new System.Drawing.Point(174, 45);
+            this.btnSaveQuestion.Location = new System.Drawing.Point(321, 48);
             this.btnSaveQuestion.Name = "btnSaveQuestion";
             this.btnSaveQuestion.Size = new System.Drawing.Size(142, 33);
             this.btnSaveQuestion.TabIndex = 6;
@@ -297,7 +271,7 @@
             // 
             this.btnDeleteQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeleteQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteQuestion.Location = new System.Drawing.Point(327, 45);
+            this.btnDeleteQuestion.Location = new System.Drawing.Point(513, 48);
             this.btnDeleteQuestion.Name = "btnDeleteQuestion";
             this.btnDeleteQuestion.Size = new System.Drawing.Size(94, 33);
             this.btnDeleteQuestion.TabIndex = 5;
@@ -311,26 +285,30 @@
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 521);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(767, 254);
+            this.groupBox3.Size = new System.Drawing.Size(1390, 254);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "أسئلة الامتحان :";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dgvQuestions
             // 
+            this.dgvQuestions.AllowUserToAddRows = false;
+            this.dgvQuestions.AllowUserToDeleteRows = false;
             this.dgvQuestions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuestions.Location = new System.Drawing.Point(0, 26);
+            this.dgvQuestions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvQuestions.Location = new System.Drawing.Point(3, 23);
             this.dgvQuestions.Name = "dgvQuestions";
-            this.dgvQuestions.Size = new System.Drawing.Size(761, 228);
+            this.dgvQuestions.ReadOnly = true;
+            this.dgvQuestions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvQuestions.Size = new System.Drawing.Size(1384, 228);
             this.dgvQuestions.TabIndex = 0;
-            this.dgvQuestions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExams_CellContentClick);
+            this.dgvQuestions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuestions_CellClick);
             // 
             // lblNameOfExam
             // 
             this.lblNameOfExam.AutoSize = true;
             this.lblNameOfExam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameOfExam.Location = new System.Drawing.Point(354, 25);
+            this.lblNameOfExam.Location = new System.Drawing.Point(556, 22);
             this.lblNameOfExam.Name = "lblNameOfExam";
             this.lblNameOfExam.Size = new System.Drawing.Size(59, 19);
             this.lblNameOfExam.TabIndex = 3;
@@ -341,7 +319,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(800, 784);
+            this.ClientSize = new System.Drawing.Size(1409, 784);
             this.Controls.Add(this.lblNameOfExam);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -388,7 +366,6 @@
         private System.Windows.Forms.RadioButton radioBtnCorrectOptionC;
         private System.Windows.Forms.RadioButton radioBtnCorrectOptionD;
         private System.Windows.Forms.RadioButton radioBtnCorrectOptionA;
-        private System.Windows.Forms.Button btnSaveEditQuestion;
         private System.Windows.Forms.Label lblNameOfExam;
     }
 }

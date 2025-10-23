@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\ExamsManager.cs" />
+    <Compile Include="BL\QuestionsBL.cs" />
     <Compile Include="BL\UserManager.cs" />
     <Compile Include="DAL\ExamsDAL.cs" />
+    <Compile Include="DAL\QuestionsDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="PL\AdminDahboard\FrmAdminDashboard.cs">
       <SubType>Form</SubType>

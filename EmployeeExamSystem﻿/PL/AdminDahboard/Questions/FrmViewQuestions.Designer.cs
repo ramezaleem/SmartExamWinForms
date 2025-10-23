@@ -38,10 +38,10 @@
             // lblNameOfExam
             // 
             this.lblNameOfExam.AutoSize = true;
-            this.lblNameOfExam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameOfExam.Location = new System.Drawing.Point(365, 27);
+            this.lblNameOfExam.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameOfExam.Location = new System.Drawing.Point(607, 36);
             this.lblNameOfExam.Name = "lblNameOfExam";
-            this.lblNameOfExam.Size = new System.Drawing.Size(59, 19);
+            this.lblNameOfExam.Size = new System.Drawing.Size(68, 23);
             this.lblNameOfExam.TabIndex = 0;
             this.lblNameOfExam.Text = "label1";
             this.lblNameOfExam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
