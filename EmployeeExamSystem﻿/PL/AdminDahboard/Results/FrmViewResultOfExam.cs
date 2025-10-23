@@ -1,6 +1,7 @@
 ﻿using EmployeeExamSystem_.BL;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EmployeeExamSystem_.PL.AdminDahboard.Results
@@ -18,6 +19,23 @@ namespace EmployeeExamSystem_.PL.AdminDahboard.Results
             _examId = examId;
             _examName = examName;
             _resultsBL = new ResultsBL();
+
+            this.BackColor = ColorTranslator.FromHtml("#F8F9F9");
+
+            lblNameOfExam.ForeColor = ColorTranslator.FromHtml("#2C3E50");
+            lblNameOfExam.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            lblNameOfExam.TextAlign = ContentAlignment.MiddleCenter;
+            lblNameOfExam.Dock = DockStyle.Top;
+            lblNameOfExam.Height = 50;
+
+            dgvExamsResults.BackgroundColor = Color.White;
+            dgvExamsResults.EnableHeadersVisualStyles = false;
+            dgvExamsResults.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#2E86C1");
+            dgvExamsResults.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvExamsResults.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#34495E");
+            dgvExamsResults.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#5DADE2");
+            dgvExamsResults.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvExamsResults.GridColor = ColorTranslator.FromHtml("#D6DBDF");
         }
 
         private void FrmViewResultOfExam_Load(object sender, EventArgs e)

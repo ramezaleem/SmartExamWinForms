@@ -39,7 +39,7 @@
             // 
             this.lblNameOfExam.AutoSize = true;
             this.lblNameOfExam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameOfExam.Location = new System.Drawing.Point(12, 15);
+            this.lblNameOfExam.Location = new System.Drawing.Point(21, 26);
             this.lblNameOfExam.Name = "lblNameOfExam";
             this.lblNameOfExam.Size = new System.Drawing.Size(119, 19);
             this.lblNameOfExam.TabIndex = 0;
