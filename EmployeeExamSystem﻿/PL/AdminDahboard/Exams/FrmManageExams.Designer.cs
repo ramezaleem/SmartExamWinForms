@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDeleteExam = new System.Windows.Forms.Button();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -63,6 +65,7 @@
             // 
             this.btnDeleteExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeleteExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteExam.ForeColor = System.Drawing.Color.White;
             this.btnDeleteExam.Location = new System.Drawing.Point(727, 75);
             this.btnDeleteExam.Name = "btnDeleteExam";
             this.btnDeleteExam.Size = new System.Drawing.Size(75, 33);
@@ -93,6 +96,7 @@
             // 
             // nudPeriodTime
             // 
+            this.nudPeriodTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.nudPeriodTime.Location = new System.Drawing.Point(457, 103);
             this.nudPeriodTime.Name = "nudPeriodTime";
             this.nudPeriodTime.Size = new System.Drawing.Size(267, 27);
@@ -117,6 +121,7 @@
             // 
             // txtExamName
             // 
+            this.txtExamName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.txtExamName.Location = new System.Drawing.Point(457, 69);
             this.txtExamName.Name = "txtExamName";
             this.txtExamName.Size = new System.Drawing.Size(267, 27);
@@ -124,8 +129,10 @@
             // 
             // btnAddNewExam
             // 
-            this.btnAddNewExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddNewExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(132)))), ((int)(((byte)(73)))));
+            this.btnAddNewExam.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(111)))), ((int)(((byte)(61)))));
             this.btnAddNewExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewExam.ForeColor = System.Drawing.Color.White;
             this.btnAddNewExam.Location = new System.Drawing.Point(959, 75);
             this.btnAddNewExam.Name = "btnAddNewExam";
             this.btnAddNewExam.Size = new System.Drawing.Size(154, 33);
@@ -138,6 +145,7 @@
             // 
             this.btnEditExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditExam.ForeColor = System.Drawing.Color.White;
             this.btnEditExam.Location = new System.Drawing.Point(843, 75);
             this.btnEditExam.Name = "btnEditExam";
             this.btnEditExam.Size = new System.Drawing.Size(75, 33);
@@ -166,6 +174,7 @@
             // 
             this.btnInsertExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnInsertExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsertExam.ForeColor = System.Drawing.Color.White;
             this.btnInsertExam.Location = new System.Drawing.Point(366, 75);
             this.btnInsertExam.Name = "btnInsertExam";
             this.btnInsertExam.Size = new System.Drawing.Size(113, 33);
@@ -178,6 +187,7 @@
             // 
             this.btnSaveEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnSaveEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveEdit.ForeColor = System.Drawing.Color.White;
             this.btnSaveEdit.Location = new System.Drawing.Point(227, 75);
             this.btnSaveEdit.Name = "btnSaveEdit";
             this.btnSaveEdit.Size = new System.Drawing.Size(98, 33);
@@ -190,6 +200,7 @@
             // 
             this.btnManageQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnManageQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageQuestions.ForeColor = System.Drawing.Color.White;
             this.btnManageQuestions.Location = new System.Drawing.Point(520, 75);
             this.btnManageQuestions.Name = "btnManageQuestions";
             this.btnManageQuestions.Size = new System.Drawing.Size(166, 33);
@@ -302,11 +313,28 @@
             // 
             this.dgvExams.AllowUserToAddRows = false;
             this.dgvExams.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvExams.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvExams.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvExams.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvExams.BackgroundColor = System.Drawing.Color.White;
             this.dgvExams.CausesValidation = false;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExams.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvExams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExams.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvExams.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvExams.Location = new System.Drawing.Point(3, 23);
             this.dgvExams.Name = "dgvExams";
@@ -322,7 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1455, 684);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);

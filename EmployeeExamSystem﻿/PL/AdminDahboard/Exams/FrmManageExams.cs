@@ -24,6 +24,60 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
         {
 
             InitializeComponent();
+            // إضافة امتحان جديد
+            btnAddNewExam.BackColor = ColorTranslator.FromHtml("#1E8449");
+            btnAddNewExam.ForeColor = Color.White;
+            btnAddNewExam.FlatStyle = FlatStyle.Flat;
+            btnAddNewExam.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#196F3D");
+            btnAddNewExam.FlatAppearance.BorderSize = 1;
+            btnAddNewExam.MouseEnter += (s, e) => btnAddNewExam.BackColor = ColorTranslator.FromHtml("#27AE60");
+            btnAddNewExam.MouseLeave += (s, e) => btnAddNewExam.BackColor = ColorTranslator.FromHtml("#1E8449");
+
+            // تعديل
+            btnEditExam.BackColor = ColorTranslator.FromHtml("#5D6D7E");
+            btnEditExam.ForeColor = Color.White;
+            btnEditExam.FlatStyle = FlatStyle.Flat;
+            btnEditExam.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#4A5863");
+            btnEditExam.FlatAppearance.BorderSize = 1;
+            btnEditExam.MouseEnter += (s, e) => btnEditExam.BackColor = ColorTranslator.FromHtml("#85929E");
+            btnEditExam.MouseLeave += (s, e) => btnEditExam.BackColor = ColorTranslator.FromHtml("#5D6D7E");
+
+            // حذف
+            btnDeleteExam.BackColor = ColorTranslator.FromHtml("#C0392B");
+            btnDeleteExam.ForeColor = Color.White;
+            btnDeleteExam.FlatStyle = FlatStyle.Flat;
+            btnDeleteExam.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#922B21");
+            btnDeleteExam.FlatAppearance.BorderSize = 1;
+            btnDeleteExam.MouseEnter += (s, e) => btnDeleteExam.BackColor = ColorTranslator.FromHtml("#E74C3C");
+            btnDeleteExam.MouseLeave += (s, e) => btnDeleteExam.BackColor = ColorTranslator.FromHtml("#C0392B");
+
+            // إدارة الأسئلة
+            btnManageQuestions.BackColor = ColorTranslator.FromHtml("#2980B9");
+            btnManageQuestions.ForeColor = Color.White;
+            btnManageQuestions.FlatStyle = FlatStyle.Flat;
+            btnManageQuestions.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#1F618D");
+            btnManageQuestions.FlatAppearance.BorderSize = 1;
+            btnManageQuestions.MouseEnter += (s, e) => btnManageQuestions.BackColor = ColorTranslator.FromHtml("#3498DB");
+            btnManageQuestions.MouseLeave += (s, e) => btnManageQuestions.BackColor = ColorTranslator.FromHtml("#2980B9");
+
+            // حفظ الامتحان
+            btnInsertExam.BackColor = ColorTranslator.FromHtml("#117A65");
+            btnInsertExam.ForeColor = Color.White;
+            btnInsertExam.FlatStyle = FlatStyle.Flat;
+            btnInsertExam.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#0E6655");
+            btnInsertExam.FlatAppearance.BorderSize = 1;
+            btnInsertExam.MouseEnter += (s, e) => btnInsertExam.BackColor = ColorTranslator.FromHtml("#148F77");
+            btnInsertExam.MouseLeave += (s, e) => btnInsertExam.BackColor = ColorTranslator.FromHtml("#117A65");
+
+            // حفظ التعديل
+            btnSaveEdit.BackColor = ColorTranslator.FromHtml("#7D6608");
+            btnSaveEdit.ForeColor = Color.White;
+            btnSaveEdit.FlatStyle = FlatStyle.Flat;
+            btnSaveEdit.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#6E6009");
+            btnSaveEdit.FlatAppearance.BorderSize = 1;
+            btnSaveEdit.MouseEnter += (s, e) => btnSaveEdit.BackColor = ColorTranslator.FromHtml("#B7950B");
+            btnSaveEdit.MouseLeave += (s, e) => btnSaveEdit.BackColor = ColorTranslator.FromHtml("#7D6608");
+
         }
 
         private void FrmManageExams_Load(object sender, EventArgs e)
