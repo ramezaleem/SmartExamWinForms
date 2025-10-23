@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Ramez\\Learning\\EmployeeExamSystem\uFEFF\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3ADB755B-7387-4617-8C85-4A82CD7B919C}|EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF.csproj|d:\\ramez\\learning\\employeeexamsystem\uFEFF\\employeeexamsystem\uFEFF\\pl\\admindahboard\\results\\frmviewresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ADB755B-7387-4617-8C85-4A82CD7B919C}|EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF.csproj|solutionrelative:employeeexamsystem\uFEFF\\pl\\admindahboard\\results\\frmviewresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3ADB755B-7387-4617-8C85-4A82CD7B919C}|EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF.csproj|d:\\ramez\\learning\\employeeexamsystem\uFEFF\\employeeexamsystem\uFEFF\\pl\\admindahboard\\results\\frmviewresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3ADB755B-7387-4617-8C85-4A82CD7B919C}|EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF.csproj|solutionrelative:employeeexamsystem\uFEFF\\pl\\admindahboard\\results\\frmviewresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FrmViewResults.cs",
+              "DocumentMoniker": "D:\\Ramez\\Learning\\EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF\\PL\\AdminDahboard\\Results\\FrmViewResults.cs",
+              "RelativeDocumentMoniker": "EmployeeExamSystem\uFEFF\\PL\\AdminDahboard\\Results\\FrmViewResults.cs",
+              "ToolTip": "D:\\Ramez\\Learning\\EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF\\PL\\AdminDahboard\\Results\\FrmViewResults.cs",
+              "RelativeToolTip": "EmployeeExamSystem\uFEFF\\PL\\AdminDahboard\\Results\\FrmViewResults.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBYAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:48:11.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FrmViewResults.cs [Design]",
               "DocumentMoniker": "D:\\Ramez\\Learning\\EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF\\PL\\AdminDahboard\\Results\\FrmViewResults.cs",
               "RelativeDocumentMoniker": "EmployeeExamSystem\uFEFF\\PL\\AdminDahboard\\Results\\FrmViewResults.cs",
@@ -34,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Ramez\\Learning\\EmployeeExamSystem\uFEFF\\EmployeeExamSystem\uFEFF\\Program.cs",
               "RelativeDocumentMoniker": "EmployeeExamSystem\uFEFF\\Program.cs",
