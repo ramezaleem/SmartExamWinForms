@@ -11,44 +11,50 @@ namespace EmployeeExamSystem_.DAL
     {
         private string connectionString = "Server=.;Database=EmployeesTestDB;Trusted_Connection=True;";
 
-        public bool ValidateUser(string userName, string password, out bool isAdmin)
+        public bool ValidateUser(string userName, string password, out bool isAdmin, out int employeeId)
         {
             isAdmin = false;
+            employeeId = -1;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
-                string userQuery = "SELECT IsAdmin FROM [User] WHERE UserName=@UserName AND Pass=@Pass";
+                string userQuery = "SELECT ID, IsAdmin FROM [User] WHERE UserName=@UserName AND Pass=@Pass";
                 using (SqlCommand cmd = new SqlCommand(userQuery, con))
                 {
                     cmd.Parameters.AddWithValue("@UserName", userName);
                     cmd.Parameters.AddWithValue("@Pass", password);
 
-                    var result = cmd.ExecuteScalar();
-                    if (result != null && result != DBNull.Value)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        isAdmin = Convert.ToBoolean(result);
-                        return true;
+                        if (reader.Read())
+                        {
+                            employeeId = Convert.ToInt32(reader["ID"]);
+                            isAdmin = Convert.ToBoolean(reader["IsAdmin"]);
+                            return true;
+                        }
                     }
                 }
 
-                string empQuery = "SELECT COUNT(*) FROM Employees WHERE Email=@Email AND NotActive=0";
+                string empQuery = "SELECT ID FROM Employees WHERE Email=@Email AND NotActive=0";
                 using (SqlCommand cmd = new SqlCommand(empQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@Email", userName); 
+                    cmd.Parameters.AddWithValue("@Email", userName);
 
-                    int count = (int)cmd.ExecuteScalar();
-                    if (count > 0)
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
                     {
+                        employeeId = Convert.ToInt32(result);
                         isAdmin = false;
                         return true;
                     }
                 }
             }
 
-            return false; 
+            return false;
         }
+
 
 
     }

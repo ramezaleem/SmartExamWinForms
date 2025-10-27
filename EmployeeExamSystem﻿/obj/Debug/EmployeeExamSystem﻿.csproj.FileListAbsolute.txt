@@ -14,3 +14,6 @@ D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\Employee
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.Questions.FrmViewQuestions.resources
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.FrmViewResults.resources
 D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.AdminDahboard.Results.FrmViewResultOfExam.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.EmployeeDashboard.FrmExamList.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.EmployeeDashboard.FrmExam.resources
+D:\Ramez\Learning\EmployeeExamSystem﻿\EmployeeExamSystem﻿\obj\Debug\EmployeeExamSystem_.PL.EmployeeDashboard.FrmExamHistory.resources

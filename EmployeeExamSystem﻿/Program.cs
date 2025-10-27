@@ -1,5 +1,6 @@
 ﻿using EmployeeExamSystem_.PL;
 using EmployeeExamSystem_.PL.AdminDahboard;
+using EmployeeExamSystem_.PL.EmployeeDashboard;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,9 @@ namespace EmployeeExamSystem﻿
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new FrmAdminDashboard());
+            Application.Run(new LoginForm());
+            //Application.Run(new FrmExamList());
+            //Application.Run(new FrmAdminDashboard());
             //Application.Run(new FrmManageQuestions());
             //Application.Run(new FrmManageExams());
         }

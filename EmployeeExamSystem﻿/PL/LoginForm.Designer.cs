@@ -34,7 +34,7 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblWelcomeEmployees = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +80,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(506, 265);
+            this.btnLogin.Location = new System.Drawing.Point(142, 262);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(132, 34);
             this.btnLogin.TabIndex = 4;
@@ -95,7 +95,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(197, 265);
+            this.btnCancel.Location = new System.Drawing.Point(521, 262);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 34);
             this.btnCancel.TabIndex = 6;
@@ -104,16 +104,16 @@
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             this.btnCancel.MouseLeave += new System.EventHandler(this.btnCancel_MouseLeave);
             // 
-            // label3
+            // lblWelcomeEmployees
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(375, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "أهلا بكم";
+            this.lblWelcomeEmployees.AutoSize = true;
+            this.lblWelcomeEmployees.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeEmployees.ForeColor = System.Drawing.Color.Blue;
+            this.lblWelcomeEmployees.Location = new System.Drawing.Point(375, 29);
+            this.lblWelcomeEmployees.Name = "lblWelcomeEmployees";
+            this.lblWelcomeEmployees.Size = new System.Drawing.Size(69, 19);
+            this.lblWelcomeEmployees.TabIndex = 5;
+            this.lblWelcomeEmployees.Text = "أهلا بكم";
             // 
             // LoginForm
             // 
@@ -122,7 +122,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(776, 346);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblWelcomeEmployees);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.txtPassword);
@@ -149,6 +149,6 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblWelcomeEmployees;
     }
 }

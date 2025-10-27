@@ -61,7 +61,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
                 if (dgvExamsResults.Columns.Contains("ExamName"))
                 {
                     dgvExamsResults.Columns["ExamName"].HeaderText = "اسم الامتحان";
-                    dgvExamsResults.Columns["ExamName"].Width = 503;
+                    dgvExamsResults.Columns["ExamName"].Width = 487;
                 }
 
                 dgvExamsResults.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;

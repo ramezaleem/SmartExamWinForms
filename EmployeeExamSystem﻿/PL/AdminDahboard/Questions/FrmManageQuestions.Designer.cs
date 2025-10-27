@@ -235,7 +235,7 @@
             // 
             this.btnAddNewQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAddNewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewQuestion.Location = new System.Drawing.Point(801, 48);
+            this.btnAddNewQuestion.Location = new System.Drawing.Point(828, 48);
             this.btnAddNewQuestion.Name = "btnAddNewQuestion";
             this.btnAddNewQuestion.Size = new System.Drawing.Size(183, 33);
             this.btnAddNewQuestion.TabIndex = 8;
@@ -247,7 +247,7 @@
             // 
             this.btnEditQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditQuestion.Location = new System.Drawing.Point(657, 48);
+            this.btnEditQuestion.Location = new System.Drawing.Point(684, 48);
             this.btnEditQuestion.Name = "btnEditQuestion";
             this.btnEditQuestion.Size = new System.Drawing.Size(94, 33);
             this.btnEditQuestion.TabIndex = 7;
@@ -259,7 +259,7 @@
             // 
             this.btnSaveQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSaveQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveQuestion.Location = new System.Drawing.Point(321, 48);
+            this.btnSaveQuestion.Location = new System.Drawing.Point(348, 48);
             this.btnSaveQuestion.Name = "btnSaveQuestion";
             this.btnSaveQuestion.Size = new System.Drawing.Size(142, 33);
             this.btnSaveQuestion.TabIndex = 6;
@@ -271,7 +271,7 @@
             // 
             this.btnDeleteQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeleteQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteQuestion.Location = new System.Drawing.Point(513, 48);
+            this.btnDeleteQuestion.Location = new System.Drawing.Point(540, 48);
             this.btnDeleteQuestion.Name = "btnDeleteQuestion";
             this.btnDeleteQuestion.Size = new System.Drawing.Size(94, 33);
             this.btnDeleteQuestion.TabIndex = 5;

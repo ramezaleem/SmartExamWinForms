@@ -25,7 +25,7 @@ namespace EmployeeExamSystem_.BL
             if (string.IsNullOrWhiteSpace(correctOption))
                 throw new System.Exception("يجب تحديد الإجابة الصحيحة");
 
-            int nextQuestionId = _questionsDAL.GetNextQuestionId();
+            int nextQuestionId = _questionsDAL.GetNextQuestionId(examId);
 
             _questionsDAL.InsertQuestion(nextQuestionId, examId, questionText, optionA, optionB, optionC, optionD, correctOption);
         }

@@ -8,15 +8,40 @@ namespace EmployeeExamSystem_.DAL
     {
         private readonly string _connectionString = "Data Source=.;Initial Catalog=EmployeesTestDB;Integrated Security=True;";
 
-        public int GetNextQuestionId()
+        public int GetNextQuestionId(int examId)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(QuestionID), 0) + 1 FROM ExamQuestions", con);
+                string query = @"
+            SELECT TOP 1 n
+            FROM (
+                SELECT ROW_NUMBER() OVER (ORDER BY QuestionID) AS n, QuestionID
+                FROM ExamQuestions WHERE ExamID = @ExamID
+            ) x
+            WHERE n <> QuestionID
+            ORDER BY n";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@ExamID", examId);
+
                 con.Open();
-                return (int)cmd.ExecuteScalar();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                    return Convert.ToInt32(result);
+
+                // إذا جميع الأرقام متتالية أو لا توجد أسئلة
+                string maxQuery = "SELECT ISNULL(MAX(QuestionID), 0) FROM ExamQuestions WHERE ExamID = @ExamID";
+                SqlCommand maxCmd = new SqlCommand(maxQuery, con);
+                maxCmd.Parameters.AddWithValue("@ExamID", examId);
+
+                int maxId = Convert.ToInt32(maxCmd.ExecuteScalar());
+                return maxId + 1 == 0 ? 1 : maxId + 1;
             }
         }
+
+
+
         public DataTable GetQuestionsByExamId(int examId)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))

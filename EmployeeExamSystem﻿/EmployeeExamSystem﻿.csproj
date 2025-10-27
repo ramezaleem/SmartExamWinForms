@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\ExamQuestionsBL.cs" />
+    <Compile Include="BL\ExamsListBL.cs" />
     <Compile Include="BL\ExamsManager.cs" />
+    <Compile Include="BL\ExamsResultsBL.cs" />
     <Compile Include="BL\QuestionsBL.cs" />
     <Compile Include="BL\ResultsBL.cs" />
     <Compile Include="BL\UserManager.cs" />
+    <Compile Include="DAL\ExamQuestionsDAL.cs" />
     <Compile Include="DAL\ExamsDAL.cs" />
+    <Compile Include="DAL\ExamsListDAL.cs" />
+    <Compile Include="DAL\ExamsResultsDAL.cs" />
     <Compile Include="DAL\QuestionsDAL.cs" />
     <Compile Include="DAL\ResultsDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
@@ -90,6 +96,24 @@
     <Compile Include="PL\AdminDahboard\Questions\FrmViewQuestions.Designer.cs">
       <DependentUpon>FrmViewQuestions.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\EmployeeDashboard\FrmExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\EmployeeDashboard\FrmExam.Designer.cs">
+      <DependentUpon>FrmExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\EmployeeDashboard\FrmExamHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\EmployeeDashboard\FrmExamHistory.Designer.cs">
+      <DependentUpon>FrmExamHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\EmployeeDashboard\FrmExamList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\EmployeeDashboard\FrmExamList.Designer.cs">
+      <DependentUpon>FrmExamList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +140,15 @@
     <EmbeddedResource Include="PL\AdminDahboard\Results\FrmViewResults.resx">
       <DependentUpon>FrmViewResults.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\EmployeeDashboard\FrmExam.resx">
+      <DependentUpon>FrmExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\EmployeeDashboard\FrmExamHistory.resx">
+      <DependentUpon>FrmExamHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\EmployeeDashboard\FrmExamList.resx">
+      <DependentUpon>FrmExamList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,8 +174,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PL\EmployeeDashboard\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

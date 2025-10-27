@@ -134,7 +134,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
         {
             ResetInputs();
         }
-        private void btnSaveQuestion_Click(object sender, EventArgs e)
+        private void btnSaveQuestion_Click(object sender, EventArgs e)  
         {
             try
             {

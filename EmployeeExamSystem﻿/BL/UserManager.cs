@@ -11,10 +11,11 @@ namespace EmployeeExamSystem_.BL
     {
         UserDAL userDAL = new UserDAL();
 
-        public bool Login(string userName, string password, out bool isAdmin)
+        public bool Login(string userName, string password, out bool isAdmin, out int employeeId)
         {
-            return userDAL.ValidateUser(userName, password, out isAdmin);
+            return userDAL.ValidateUser(userName, password, out isAdmin, out employeeId);
         }
+
 
     }
 }

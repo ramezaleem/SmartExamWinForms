@@ -170,7 +170,7 @@ namespace EmployeeExamSystem_.PL.AdminDahboard
             if (dgvExams.Columns.Contains("IsActive"))
             {
                 dgvExams.Columns["IsActive"].HeaderText = "فعال";
-                dgvExams.Columns["IsActive"].Width = 75;
+                dgvExams.Columns["IsActive"].Width = 95;
             }
             dgvExams.ClearSelection();
             ClearForm();
